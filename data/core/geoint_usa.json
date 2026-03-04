@@ -1,0 +1,14 @@
+{
+  "score": 20,
+  "disonancia": false,
+  "conflict": false,
+  "timestamp": 1772631003.6783264,
+  "noticias_procesadas": 60,
+  "version": "V9.3",
+  "calidad_nivel": "AZUL",
+  "calidad_emoji": "\ud83d\udd35",
+  "calidad_css": "blue",
+  "fuentes_activas": 3,
+  "uso_fallback": false,
+  "uso_web": false
+}

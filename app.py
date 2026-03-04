@@ -359,9 +359,11 @@ def cf_tier_bar(name, cf_val, ref_val, color, tier_label):
 # ─── DATOS ───────────────────────────────────────────────────────
 
 BASE = os.path.dirname(os.path.abspath(__file__))
-C    = os.path.join(BASE, "..", "SIEG-Core",  "data")
-A    = os.path.join(BASE, "..", "SIEG-Atlas", "data", "live")
-I    = os.path.join(BASE, "..", "SIEG-Iran",  "data", "live")
+# En Streamlit Cloud los JSONs están en data/ dentro del propio repo SIEG-Hub
+# El crontab del Odroid debe copiarlos aquí antes del git push
+C    = os.path.join(BASE, "data", "core")
+A    = os.path.join(BASE, "data", "atlas")
+I    = os.path.join(BASE, "data", "iran")
 
 now    = datetime.datetime.now()
 now_ts = now.timestamp()
@@ -401,6 +403,10 @@ iran_files = {
     "Sanciones_Economia": load_json(os.path.join(I, "iran_sanciones_economia.json")),
     "Diplomatico":        load_json(os.path.join(I, "iran_diplomatico.json")),
 }
+
+def get_noticias(data: dict) -> float:
+    """Core usa 'noticias_procesadas', Atlas/Iran usan 'noticias'."""
+    return float(data.get("noticias_procesadas") or data.get("noticias") or 0)
 
 # Scores para las cards de la tab 1
 core_actors  = {k: float(v.get("score", 45)) for k, v in list(core_files.items())[:4]}
@@ -659,27 +665,27 @@ with tab_audit:
     MIN_IRAN  = 40
 
     cov_core  = "".join(
-        cov_bar(k.replace("_"," ")[:22], float(v.get("noticias_procesadas", 0)), MIN_CORE)
+        cov_bar(k.replace("_"," ")[:22], get_noticias(v), MIN_CORE)
         for k, v in core_files.items()
     )
     cov_atlas = "".join(
-        cov_bar(k, float(v.get("noticias", 0)), MIN_ATLAS)
+        cov_bar(k, get_noticias(v), MIN_ATLAS)
         for k, v in atlas_files.items()
     )
     cov_iran  = "".join(
-        cov_bar(k.replace("_"," ")[:22], float(v.get("noticias", 0)), MIN_IRAN)
+        cov_bar(k.replace("_"," ")[:22], get_noticias(v), MIN_IRAN)
         for k, v in iran_files.items()
     )
 
     total_noticias = (
-        sum(float(v.get("noticias_procesadas", 0)) for v in core_files.values()) +
-        sum(float(v.get("noticias", 0)) for v in atlas_files.values()) +
-        sum(float(v.get("noticias", 0)) for v in iran_files.values())
+        sum(get_noticias(v) for v in core_files.values()) +
+        sum(get_noticias(v) for v in atlas_files.values()) +
+        sum(get_noticias(v) for v in iran_files.values())
     )
     n_bajo_umbral = (
-        sum(1 for v in core_files.values()  if float(v.get("noticias_procesadas",0)) < MIN_CORE) +
-        sum(1 for v in atlas_files.values() if float(v.get("noticias",0)) < MIN_ATLAS) +
-        sum(1 for v in iran_files.values()  if float(v.get("noticias",0)) < MIN_IRAN)
+        sum(1 for v in core_files.values()  if get_noticias(v) < MIN_CORE)  +
+        sum(1 for v in atlas_files.values() if get_noticias(v) < MIN_ATLAS) +
+        sum(1 for v in iran_files.values()  if get_noticias(v) < MIN_IRAN)
     )
 
     st.markdown(f"""
@@ -894,9 +900,9 @@ with tab_audit:
             pass
         return result
 
-    core_hist  = load_recent_scores(os.path.join(C, "history_log.csv"),  "region")
-    atlas_hist = load_recent_scores(os.path.join(A, "history_atlas.csv"), "modulo")
-    iran_hist  = load_recent_scores(os.path.join(I, "history_iran.csv"),  "vector")
+    core_hist  = load_recent_scores(os.path.join(C, "history_log.csv"),       "region")
+    atlas_hist = load_recent_scores(os.path.join(A, "history_atlas.csv"),     "modulo")
+    iran_hist  = load_recent_scores(os.path.join(I, "history_iran.csv"),      "vector")
 
     def detect_anomalies(hist_dict, files_dict, system_name, color):
         rows_html = ""

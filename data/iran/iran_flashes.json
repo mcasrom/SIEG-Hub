@@ -1,0 +1,182 @@
+[
+  {
+    "ts": 1772628302.1809244,
+    "vector": "Conflicto_Directo",
+    "icono": "⚔️",
+    "titulo": "Iranian warship sinks after apparent submarine attack near Sri Lanka; 101 said missing",
+    "trigger": "warship",
+    "score": 72,
+    "cf": 0.8
+  },
+  {
+    "ts": 1772624702.5052967,
+    "vector": "Conflicto_Directo",
+    "icono": "⚔️",
+    "titulo": "IDF carries out ‘extensive’ strikes on regime targets; Iran fires missiles at Israeli towns",
+    "trigger": "iran fires",
+    "score": 72,
+    "cf": 0.8
+  },
+  {
+    "ts": 1772617502.605549,
+    "vector": "Conflicto_Directo",
+    "icono": "⚔️",
+    "titulo": "Israeli F-35 shoots down Iranian jet in air-to-air combat over Tehran as fighting enters 5th day",
+    "trigger": "hezbollah",
+    "score": 72,
+    "cf": 0.8
+  },
+  {
+    "ts": 1772613902.2087271,
+    "vector": "Proxies_Regionales",
+    "icono": "🕸",
+    "titulo": "Funerals held for students and staff after strike on Iran school Iranian authorities say they were killed in a US-Israeli strike in the city",
+    "trigger": "killed in",
+    "score": 65,
+    "cf": 0.9
+  },
+  {
+    "ts": 1772599502.4988549,
+    "vector": "Proxies_Regionales",
+    "icono": "🕸",
+    "titulo": "First US soldiers to die in Iran conflict are identified Four of the six - ranging in age from 20 to 42 - have been named after the drone st",
+    "trigger": "drone strike",
+    "score": 65,
+    "cf": 0.9
+  },
+  {
+    "ts": 1772595902.031514,
+    "vector": "Conflicto_Directo",
+    "icono": "⚔️",
+    "titulo": "IDF carries out ‘broad wave of attacks’ across Iran overnight; Iranian missiles lobbed at Israel",
+    "trigger": "hezbollah",
+    "score": 72,
+    "cf": 0.8
+  },
+  {
+    "ts": 1772592302.3570158,
+    "vector": "Conflicto_Directo",
+    "icono": "⚔️",
+    "titulo": "Hezbollah fires on Tel Aviv as Israel threatens Iranian officers in Lebanon",
+    "trigger": "hezbollah",
+    "score": 72,
+    "cf": 0.8
+  },
+  {
+    "ts": 1772585102.1627893,
+    "vector": "Conflicto_Directo",
+    "icono": "⚔️",
+    "titulo": "Khamenei’s son Mojtaba said to emerge as leading candidate for new supreme leader",
+    "trigger": "iran fires",
+    "score": 72,
+    "cf": 0.8
+  },
+  {
+    "ts": 1772577902.6981158,
+    "vector": "Conflicto_Directo",
+    "icono": "⚔️",
+    "titulo": "Syria deploys thousands of troops to border with Lebanon, officials say",
+    "trigger": "hezbollah",
+    "score": 72,
+    "cf": 0.8
+  },
+  {
+    "ts": 1772563502.0410087,
+    "vector": "Conflicto_Directo",
+    "icono": "⚔️",
+    "titulo": "Israel strikes Iranian clerics gathering to elect new supreme leader",
+    "trigger": "israel strikes iran",
+    "score": 72,
+    "cf": 0.8
+  },
+  {
+    "ts": 1772556302.7821195,
+    "vector": "Proxies_Regionales",
+    "icono": "🕸",
+    "titulo": "Battered and isolated, Hezbollah drags Lebanon into another war Its attack on Israel in support of Iran has led to fresh mass displacements ",
+    "trigger": "hezbollah",
+    "score": 65,
+    "cf": 0.9
+  },
+  {
+    "ts": 1772556302.7821195,
+    "vector": "Proxies_Regionales",
+    "icono": "🕸",
+    "titulo": "Six US soldiers killed in Iranian strike on Kuwait base The US defence secretary confirms a US military base was hit by Iran on Sunday.",
+    "trigger": "killed in",
+    "score": 65,
+    "cf": 0.9
+  },
+  {
+    "ts": 1772552702.9517982,
+    "vector": "Conflicto_Directo",
+    "icono": "⚔️",
+    "titulo": "Growing Iranian drone strikes drive slump in global shares, spike in crude prices",
+    "trigger": "drone strike",
+    "score": 72,
+    "cf": 0.8
+  },
+  {
+    "ts": 1772552702.9517982,
+    "vector": "Conflicto_Directo",
+    "icono": "⚔️",
+    "titulo": "IDF hits Iran’s ‘leadership complex’ in Tehran; 12 Israelis hurt in Iran missile strikes",
+    "trigger": "missile strike",
+    "score": 72,
+    "cf": 0.8
+  },
+  {
+    "ts": 1772541902.3083587,
+    "vector": "Conflicto_Directo",
+    "icono": "⚔️",
+    "titulo": "US Ambassador Huckabee advises US citizens in Israel to evacuate via Egypt",
+    "trigger": "warship",
+    "score": 72,
+    "cf": 0.8
+  },
+  {
+    "ts": 1772538302.9787345,
+    "vector": "Conflicto_Directo",
+    "icono": "⚔️",
+    "titulo": "IDF sends troops further into south Lebanon and strikes Beirut amid Hezbollah attacks",
+    "trigger": "hezbollah",
+    "score": 72,
+    "cf": 0.8
+  },
+  {
+    "ts": 1772538302.9787345,
+    "vector": "Conflicto_Directo",
+    "icono": "⚔️",
+    "titulo": "Kuwaitis seen helping US fighter pilot after plane shot down",
+    "trigger": "shot down",
+    "score": 72,
+    "cf": 0.8
+  },
+  {
+    "ts": 1772538302.9787345,
+    "vector": "Conflicto_Directo",
+    "icono": "⚔️",
+    "titulo": "Renewed rocket fire from Iran, Lebanon targets Israel as IDF strikes in Tehran, Beirut",
+    "trigger": "idf strikes",
+    "score": 72,
+    "cf": 0.8
+  },
+  {
+    "ts": 1772538302.9787345,
+    "vector": "Proxies_Regionales",
+    "icono": "🕸",
+    "titulo": "Israel strikes Lebanon after Hezbollah rocket fire as Iran conflict widens Lebanese officials say 52 people were killed by Israeli strikes, ",
+    "trigger": "hezbollah",
+    "score": 65,
+    "cf": 0.9
+  },
+  {
+    "ts": 1772538302.9787345,
+    "vector": "Proxies_Regionales",
+    "icono": "🕸",
+    "titulo": "US jets shot down over Kuwait in 'apparent friendly fire incident', officials say",
+    "trigger": "shot down",
+    "score": 65,
+    "cf": 0.9
+  }
+]
