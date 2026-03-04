@@ -769,7 +769,7 @@ with tab_audit:
     cf_global_color = "#00ff88" if cf_global >= TIER1_AVG - 0.05 else ("#ff8c00" if cf_global >= 0.70 else "#ff3333")
 
     st.markdown(f"""
-    <div class="audit-section" style="border-left:3px solid #ffd700;">
+    <div class="audit-section" style="border-left:3px solid #ffd700;margin-bottom:0.5rem;">
       <div class="audit-title" style="color:#ffd700;">
         ◈ Credibilidad CF — Comparativa vs Fuentes Tier-1 Internacionales
         &nbsp;&nbsp;
@@ -777,37 +777,37 @@ with tab_audit:
         &nbsp;
         {badge(f"Referencia Tier-1: {TIER1_AVG:.2f}", "info")}
       </div>
+    </div>
+    """, unsafe_allow_html=True)
 
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;">
-
-        <div>
+    cf_col1, cf_col2 = st.columns(2)
+    with cf_col1:
+        st.markdown(f"""
+        <div style="background:var(--bg2);border:1px solid var(--border);border-radius:3px;padding:1.2rem 1.5rem;">
           <div style="font-family:'Share Tech Mono',monospace;font-size:0.62em;color:var(--muted);
                       letter-spacing:0.12em;margin-bottom:0.8rem;">
             CF SIEG vs MEDIA TIER-1 (barra gris = referencia)
           </div>
           {cf_core_bars}
-          <div style="font-family:'Share Tech Mono',monospace;font-size:0.58em;color:var(--muted);
-                      margin-top:0.8rem;">
-            CF 0.90–1.00 = Tier 1 (BBC/Reuters/NYT) · 0.80–0.89 = Alta fiabilidad ·
-            0.70–0.79 = Media · &lt;0.70 = Baja / Google News
+          <div style="font-family:'Share Tech Mono',monospace;font-size:0.58em;color:var(--muted);margin-top:0.8rem;">
+            CF 0.90–1.00 = Tier 1 · 0.80–0.89 = Alta fiabilidad · 0.70–0.79 = Media · &lt;0.70 = Google News
           </div>
         </div>
+        """, unsafe_allow_html=True)
 
-        <div>
+    with cf_col2:
+        st.markdown(f"""
+        <div style="background:var(--bg2);border:1px solid var(--border);border-radius:3px;padding:1.2rem 1.5rem;">
           <div style="font-family:'Share Tech Mono',monospace;font-size:0.62em;color:var(--muted);
                       letter-spacing:0.12em;margin-bottom:0.8rem;">
             FUENTES TIER-1 DE REFERENCIA (no polarizadas)
           </div>
           {tier1_html}
-          <div style="font-family:'Share Tech Mono',monospace;font-size:0.58em;color:var(--muted);
-                      margin-top:0.8rem;">
+          <div style="font-family:'Share Tech Mono',monospace;font-size:0.58em;color:var(--muted);margin-top:0.8rem;">
             Criterio Tier-1: internacional · multiperspectiva · verificable · CF ≥ 0.80
           </div>
         </div>
-
-      </div>
-    </div>
-    """, unsafe_allow_html=True)
+        """, unsafe_allow_html=True)
 
     # ════════════════════════════════════════════════════════════
     # BLOQUE 4 — RATIO CAPAS (primarias / fallback / web)
@@ -854,21 +854,21 @@ with tab_audit:
     dep_web = badge(f"{int(total_w/total_v*100)}% Google News", "ok" if total_w/total_v < 0.2 else "warn")
 
     st.markdown(f"""
-    <div class="audit-section" style="border-left:3px solid #ff8c00;">
+    <div class="audit-section" style="border-left:3px solid #ff8c00;margin-bottom:0.5rem;">
       <div class="audit-title" style="color:#ff8c00;">
         ◈ Ratio de Capas de Fuentes — Primarias / Fallback / Google News
-        &nbsp;&nbsp;
-        {dep_web}
+        &nbsp;&nbsp;{dep_web}
       </div>
-      <div style="font-family:'Rajdhani',sans-serif;font-size:0.85em;color:#3a5070;margin-bottom:1.2rem;">
+      <div style="font-family:'Rajdhani',sans-serif;font-size:0.85em;color:#3a5070;margin-bottom:0.5rem;">
         Un sistema saludable obtiene &gt;60% de noticias de fuentes primarias curadas.
         Alta dependencia de Google News (Capa 3) indica falta de fuentes RSS directas para ese actor.
       </div>
-      {capa_bar_html("SIEG Core — 14 actores",  *cp_core,  "#00ff88")}
-      {capa_bar_html("SIEG Atlas — 6 módulos",  *cp_atlas, "#00e5ff")}
-      {capa_bar_html("SIEG Iran — 8 vectores",  *cp_iran,  "#ff3333")}
     </div>
     """, unsafe_allow_html=True)
+
+    st.markdown(capa_bar_html("SIEG Core — 14 actores",  *cp_core,  "#00ff88"), unsafe_allow_html=True)
+    st.markdown(capa_bar_html("SIEG Atlas — 6 módulos",  *cp_atlas, "#00e5ff"), unsafe_allow_html=True)
+    st.markdown(capa_bar_html("SIEG Iran — 8 vectores",  *cp_iran,  "#ff3333"), unsafe_allow_html=True)
 
     # ════════════════════════════════════════════════════════════
     # BLOQUE 5 — DETECCIÓN DE SCORES ANÓMALOS / CONGELADOS
